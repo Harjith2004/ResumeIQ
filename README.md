@@ -32,51 +32,6 @@ No backend. No database. No auth. Just a clean React app.
 
 ---
 
-## Local Setup (2 minutes)
-
-### 1. Clone & install
-```bash
-git clone https://github.com/YOUR_USERNAME/resumeiq-lite.git
-cd resumeiq-lite
-npm install
-```
-
-### 2. Get a free Gemini API key
-1. Go to [https://aistudio.google.com/](https://aistudio.google.com/)
-2. Click **Get API Key** → **Create API key**
-3. Copy the key
-
-### 3. Set up environment
-```bash
-cp .env.example .env
-# Edit .env and paste your key:
-# VITE_GEMINI_API_KEY=AIza...
-```
-
-### 4. Run
-```bash
-npm run dev
-# Opens at http://localhost:5173
-```
-
----
-
-## Deploy to Vercel (Free, 2 minutes)
-
-```bash
-npm install -g vercel
-vercel
-# Follow prompts — select your project
-```
-
-Then add your env variable in the Vercel dashboard:
-- **Settings → Environment Variables**
-- Name: `VITE_GEMINI_API_KEY`
-- Value: `your_api_key`
-
-Redeploy → done. Share the URL.
-
----
 
 ## Folder Structure
 
