@@ -23,8 +23,22 @@ async function callGemini(prompt) {
 }
 
 function parseJSON(raw) {
-  const cleaned = raw.replace(/```json\n?|\n?```/g, '').trim();
-  return JSON.parse(cleaned);
+  let cleaned = raw.replace(/```json\n?|\n?```/g, '').trim();
+  
+  // Extract just the {...} block in case there's extra text before/after
+  const start = cleaned.indexOf('{');
+  const end = cleaned.lastIndexOf('}');
+  if (start !== -1 && end !== -1) {
+    cleaned = cleaned.slice(start, end + 1);
+  }
+  
+  try {
+    return JSON.parse(cleaned);
+  } catch (err) {
+    console.error('Raw AI response:', raw);
+    throw new Error('AI returned an incomplete response. Please try again, or use a .txt file instead of PDF.');
+  }
+}
 }
 
 export async function analyzeResume(resumeText, jobDescription = '') {
