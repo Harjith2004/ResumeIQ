@@ -68,7 +68,7 @@ export default function UploadCard({ onResult }) {
                 <Upload size={30} className={dragging ? 'text-indigo-600' : 'text-slate-400'}/>
               </div>
               <p className="text-slate-800 font-bold text-lg mb-1">Drop your resume here or choose a file</p>
-              <p className="text-slate-400 text-sm mb-4">PDF & TXT only · Max 5MB</p>
+              <p className="text-slate-400 text-sm mb-4">.TXT recommended · PDF supported but less accurate · Max 5MB</p>
               <span className="px-5 py-2.5 rounded-xl text-sm font-bold text-white inline-block"
                 style={{background:'linear-gradient(135deg, #10b981, #06b6d4)'}}>
                 Browse Files
